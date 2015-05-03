@@ -1,4 +1,4 @@
-## OpenStack/Juno VM based on Devstack/Neutron
+## OpenStack/Kilo VM based on Devstack/Neutron
 
 ### Prerequisite: Vagrant
 
@@ -26,7 +26,7 @@ The two special characters at the end are part of it.
 
 ### Lookup Dashboard
 
-    open https://10.10.10.10
+    open http://10.10.10.10
 
     username: demo / password: openstack
 

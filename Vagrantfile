@@ -12,7 +12,7 @@ apt-get -y install git-core > /dev/null
 
 ip link set dev eth2 up
 
-su vagrant -c "git clone git://github.com/openstack-dev/devstack.git -b stable/juno"
+su vagrant -c "git clone git://github.com/openstack-dev/devstack.git -b stable/kilo"
 su vagrant -c "cp /vagrant/local.conf devstack"
 su vagrant -c "cd devstack ; ./stack.sh"
 
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vbox|
     vbox.name = BOXNAME
     vbox.customize ["modifyvm", :id, "--cpus",                "4"]
-    vbox.customize ["modifyvm", :id, "--memory",           "4096"]
+    vbox.customize ["modifyvm", :id, "--memory",           "8192"]
     vbox.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
   end
 
