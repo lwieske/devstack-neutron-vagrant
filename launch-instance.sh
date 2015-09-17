@@ -8,7 +8,7 @@ export OS_PASSWORD=openstack
 export OS_AUTH_URL=http://10.10.10.10:5000/v2.0/
 
 PING_FLAVOR=m1.tiny
-PING_IMAGE=cirros-0.3.2-x86_64-uec
+PING_IMAGE=cirros-0.3.4-x86_64-uec
 PING_INSTANCE=ping-instance
 PING_SECGROUP=ping-secgroup
 
