@@ -31,7 +31,7 @@ INLINE
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box            = "chef/ubuntu-14.04"
+  config.vm.box            = "bento/ubuntu-14.04"
 
   config.vm.hostname       = BOXNAME
   config.cache.auto_detect = true
