@@ -1,4 +1,4 @@
-## OpenStack/Kilo VM based on Devstack/Neutron
+## OpenStack/Liberty VM based on Devstack/Neutron
 
 ### Prerequisite: Vagrant
 
