@@ -12,9 +12,9 @@ apt-get -y install git-core > /dev/null
 
 ip link set dev eth2 up
 
-su vagrant -c "git clone git://github.com/openstack-dev/devstack.git -b stable/liberty"
+su vagrant -c "git clone git://github.com/openstack-dev/devstack.git -b stable/mitaka &>/dev/null"
 su vagrant -c "cp /vagrant/local.conf devstack"
-su vagrant -c "cd devstack ; ./stack.sh"
+su vagrant -c "cd devstack ; ./stack.sh                                               2>/dev/null"
 
 ovs-vsctl add-port br-ex eth2
 

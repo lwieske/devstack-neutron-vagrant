@@ -1,4 +1,4 @@
-## OpenStack/Liberty VM based on Devstack/Neutron
+## OpenStack/Mitaka VM based on Devstack/Neutron
 
 ### Prerequisite: Vagrant
 
