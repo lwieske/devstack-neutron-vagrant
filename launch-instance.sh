@@ -30,6 +30,6 @@ openstack server create --image $PING_IMAGE --flavor $PING_FLAVOR --security-gro
 # ASSOCIATE
 ###########
 
-openstack ip floating create public
-FLOATING_IP=`openstack ip floating list -c "Floating IP Address" | sed -n 4,4p | awk '{print $2;}'`
-openstack ip floating add $FLOATING_IP $PING_INSTANCE
+openstack floating ip create public
+FLOATING_IP=`openstack floating ip list -c "Floating IP Address" | sed -n 4,4p | awk '{print $2;}'`
+openstack server add floating ip $PING_INSTANCE $FLOATING_IP
