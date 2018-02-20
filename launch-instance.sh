@@ -5,10 +5,10 @@ export OS_TENANT_NAME=demo
 export OS_USERNAME=demo
 export OS_PASSWORD=openstack
 
-export OS_AUTH_URL=http://10.10.10.10:5000/v2.0/
+export OS_AUTH_URL=http://10.10.10.10/identity/
 
 PING_FLAVOR=m1.tiny
-PING_IMAGE=cirros-0.3.4-x86_64-uec
+PING_IMAGE=cirros-0.3.5-x86_64-disk
 PING_INSTANCE=ping-instance
 PING_SECGROUP=ping-secgroup
 
@@ -17,8 +17,8 @@ PING_SECGROUP=ping-secgroup
 ##########
 
 openstack security group create      $PING_SECGROUP --description "ping-secgroup"
-openstack security group rule create $PING_SECGROUP --proto icmp --src-ip 0.0.0.0/0 --dst-port -1
-openstack security group rule create $PING_SECGROUP --proto tcp  --src-ip 0.0.0.0/0 --dst-port 22
+openstack security group rule create $PING_SECGROUP --proto icmp --remote-ip 0.0.0.0/0 --dst-port -1
+openstack security group rule create $PING_SECGROUP --proto tcp  --remote-ip 0.0.0.0/0 --dst-port 22
 
 ########
 # LAUNCH

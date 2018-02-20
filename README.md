@@ -1,4 +1,4 @@
-## OpenStack/Ocata VM based on Devstack/Neutron
+## OpenStack/Pike VM based on Devstack/Neutron
 
 ### Prerequisite: Vagrant
 

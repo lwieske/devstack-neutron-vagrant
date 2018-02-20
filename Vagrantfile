@@ -5,21 +5,21 @@ BOXNAME    = "devstack-neutron-vagrant"
 
 $script = <<INLINE
 
-export DEBIAN_FRONTEND=noninteractive ; set -ex
+# export DEBIAN_FRONTEND=noninteractive ; set -ex
 
-timedatectl set-timezone Europe/Berlin
-dpkg-reconfigure -f noninteractive tzdata
+timedatectl set-timezone Europe/Berlin    > /dev/null
+dpkg-reconfigure -f noninteractive tzdata > /dev/null
 
-apt-get update              > /dev/null
-apt-get -y install git-core > /dev/null
+apt-get update                            > /dev/null
+apt-get -y install git-core               > /dev/null
 
-ip link set dev enp0s9 up
+ip link set dev eth2 up
 
-su vagrant -c "git clone git://github.com/openstack-dev/devstack.git -b stable/ocata &> /dev/null"
-su vagrant -c "cp /vagrant/local.conf devstack                                                   "
-su vagrant -c "devstack/stack.sh                                                     2> /dev/null"
+su vagrant -c "git clone git://github.com/openstack-dev/devstack.git -b stable/pike &> /dev/null"
+su vagrant -c "cp /vagrant/local.conf devstack                                                  "
+su vagrant -c "devstack/stack.sh                                                    2> /dev/null"
 
-ovs-vsctl add-port br-ex enp0s9
+ovs-vsctl add-port br-ex eth2
 
 echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables -t nat -A POSTROUTING -o enp0s8 -j MASQUERADE
@@ -37,7 +37,6 @@ Vagrant.configure("2") do |config|
   config.vm.box            = "bento/ubuntu-16.04"
 
   config.vm.hostname       = BOXNAME
-  config.cache.auto_detect = true
 
   config.vm.network :private_network, ip: "10.10.10.10"
   config.vm.network :private_network, ip: "172.24.4.225",
