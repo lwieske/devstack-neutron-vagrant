@@ -1,4 +1,4 @@
-## OpenStack/Pike VM based on Devstack/Neutron
+## OpenStack/Queens VM based on Devstack/Neutron
 
 ### Prerequisite: Vagrant
 
