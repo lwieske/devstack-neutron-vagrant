@@ -1,11 +1,15 @@
 #!/bin/bash -x
 
-export OS_TENANT_NAME=demo
-
+export OS_AUTH_URL=http://10.10.10.10/identity/v3
+export OS_PROJECT_NAME="demo"
+export OS_USER_DOMAIN_NAME="Default"
+export OS_PROJECT_DOMAIN_ID="default"
 export OS_USERNAME=demo
 export OS_PASSWORD=openstack
+export OS_REGION_NAME="RegionOne"
 
-export OS_AUTH_URL=http://10.10.10.10/identity/
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
 
 PING_FLAVOR=m1.tiny
 PING_IMAGE=cirros-0.3.5-x86_64-disk
